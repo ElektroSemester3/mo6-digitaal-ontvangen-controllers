@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xAB247C0D2B510771",
+      "boundary_crc": "0x78C08ECF6553683E",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../mo6-digitaal-ontvangen-controllers-jochem.gen/sources_1/bd/design_1",
       "name": "design_1",
@@ -11,6 +11,8 @@
     },
     "design_tree": {
       "clk_wiz": "",
+      "clk_divider_0": "",
+      "draadloze_sensor_0": "",
       "inductieve_sensor_0": ""
     },
     "ports": {
@@ -35,13 +37,19 @@
           }
         }
       },
-      "enable_0": {
+      "enable_1": {
         "direction": "I"
       },
-      "freq_in_0": {
+      "signal_connected_0": {
         "direction": "I"
       },
-      "value_out_0": {
+      "signal_up_0": {
+        "direction": "I"
+      },
+      "signal_down_0": {
+        "direction": "I"
+      },
+      "value_out_1": {
         "direction": "O",
         "left": "8",
         "right": "0"
@@ -62,6 +70,81 @@
           },
           "USE_LOCKED": {
             "value": "false"
+          }
+        }
+      },
+      "clk_divider_0": {
+        "vlnv": "xilinx.com:module_ref:clk_divider:1.0",
+        "xci_name": "design_1_clk_divider_0_0",
+        "xci_path": "ip\\design_1_clk_divider_0_0\\design_1_clk_divider_0_0.xci",
+        "inst_hier_path": "clk_divider_0",
+        "parameters": {
+          "division": {
+            "value": "100000"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "clk_divider",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_in": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "clk_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "draadloze_sensor_0": {
+        "vlnv": "xilinx.com:module_ref:draadloze_sensor:1.0",
+        "xci_name": "design_1_draadloze_sensor_0_0",
+        "xci_path": "ip\\design_1_draadloze_sensor_0_0\\design_1_draadloze_sensor_0_0.xci",
+        "inst_hier_path": "draadloze_sensor_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "draadloze_sensor",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk_slow": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "enable": {
+            "direction": "I"
+          },
+          "signal_connected": {
+            "direction": "I"
+          },
+          "signal_up": {
+            "direction": "I"
+          },
+          "signal_down": {
+            "direction": "I"
+          },
+          "value_out": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
           }
         }
       },
@@ -110,35 +193,56 @@
       }
     },
     "nets": {
+      "clk_divider_0_clk_out": {
+        "ports": [
+          "clk_divider_0/clk_out",
+          "draadloze_sensor_0/clk_slow"
+        ]
+      },
       "clk_wiz_clk_out1": {
         "ports": [
           "clk_wiz/clk_out1",
+          "clk_divider_0/clk_in",
           "inductieve_sensor_0/clk"
         ]
       },
-      "enable_0_1": {
+      "draadloze_sensor_0_value_out": {
         "ports": [
-          "enable_0",
-          "inductieve_sensor_0/enable"
+          "draadloze_sensor_0/value_out",
+          "value_out_1"
         ]
       },
-      "freq_in_0_1": {
+      "enable_1_1": {
         "ports": [
-          "freq_in_0",
-          "inductieve_sensor_0/freq_in"
-        ]
-      },
-      "inductieve_sensor_0_value_out": {
-        "ports": [
-          "inductieve_sensor_0/value_out",
-          "value_out_0"
+          "enable_1",
+          "draadloze_sensor_0/enable"
         ]
       },
       "reset_rtl_1": {
         "ports": [
           "reset_rtl",
           "clk_wiz/reset",
+          "clk_divider_0/reset",
+          "draadloze_sensor_0/reset",
           "inductieve_sensor_0/reset"
+        ]
+      },
+      "signal_connected_0_1": {
+        "ports": [
+          "signal_connected_0",
+          "draadloze_sensor_0/signal_connected"
+        ]
+      },
+      "signal_down_0_1": {
+        "ports": [
+          "signal_down_0",
+          "draadloze_sensor_0/signal_down"
+        ]
+      },
+      "signal_up_0_1": {
+        "ports": [
+          "signal_up_0",
+          "draadloze_sensor_0/signal_up"
         ]
       },
       "sys_clock_1": {
