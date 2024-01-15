@@ -13,7 +13,8 @@
       "clk_wiz": "",
       "clk_divider_0": "",
       "draadloze_sensor_0": "",
-      "inductieve_sensor_0": ""
+      "inductieve_sensor_0": "",
+      "controller_interconn_0": ""
     },
     "ports": {
       "sys_clock": {
@@ -37,19 +38,37 @@
           }
         }
       },
-      "enable_1": {
+      "draadloos_signal_up": {
         "direction": "I"
       },
-      "signal_connected_0": {
+      "draadloos_signal_connected": {
         "direction": "I"
       },
-      "signal_up_0": {
+      "draadloos_signal_down": {
         "direction": "I"
       },
-      "signal_down_0": {
+      "inductieve_sensor_in": {
         "direction": "I"
       },
-      "value_out_1": {
+      "choice_1": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "choice_2": {
+        "direction": "I",
+        "left": "1",
+        "right": "0"
+      },
+      "enable": {
+        "direction": "I"
+      },
+      "controller_output_1": {
+        "direction": "O",
+        "left": "8",
+        "right": "0"
+      },
+      "controller_output_2": {
         "direction": "O",
         "left": "8",
         "right": "0"
@@ -190,9 +209,81 @@
             "right": "0"
           }
         }
+      },
+      "controller_interconn_0": {
+        "vlnv": "xilinx.com:module_ref:controller_interconnect:1.0",
+        "xci_name": "design_1_controller_interconn_0_0",
+        "xci_path": "ip\\design_1_controller_interconn_0_0\\design_1_controller_interconn_0_0.xci",
+        "inst_hier_path": "controller_interconn_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "controller_interconnect",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "enable": {
+            "direction": "I"
+          },
+          "choice_1": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "choice_2": {
+            "direction": "I",
+            "left": "1",
+            "right": "0"
+          },
+          "controller_input_1": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "controller_input_2": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "controller_input_3": {
+            "direction": "I",
+            "left": "8",
+            "right": "0"
+          },
+          "controller_enable_1": {
+            "direction": "O"
+          },
+          "controller_enable_2": {
+            "direction": "O"
+          },
+          "controller_enable_3": {
+            "direction": "O"
+          },
+          "controller_output_1": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "controller_output_2": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
+      "choice_1_0_1": {
+        "ports": [
+          "choice_1",
+          "controller_interconn_0/choice_1"
+        ]
+      },
+      "choice_2_0_1": {
+        "ports": [
+          "choice_2",
+          "controller_interconn_0/choice_2"
+        ]
+      },
       "clk_divider_0_clk_out": {
         "ports": [
           "clk_divider_0/clk_out",
@@ -206,16 +297,52 @@
           "inductieve_sensor_0/clk"
         ]
       },
+      "controller_interconn_0_controller_enable_1": {
+        "ports": [
+          "controller_interconn_0/controller_enable_1",
+          "draadloze_sensor_0/enable"
+        ]
+      },
+      "controller_interconn_0_controller_enable_2": {
+        "ports": [
+          "controller_interconn_0/controller_enable_2",
+          "inductieve_sensor_0/enable"
+        ]
+      },
+      "controller_interconn_0_controller_output_1": {
+        "ports": [
+          "controller_interconn_0/controller_output_1",
+          "controller_output_1"
+        ]
+      },
+      "controller_interconn_0_controller_output_2": {
+        "ports": [
+          "controller_interconn_0/controller_output_2",
+          "controller_output_2"
+        ]
+      },
       "draadloze_sensor_0_value_out": {
         "ports": [
           "draadloze_sensor_0/value_out",
-          "value_out_1"
+          "controller_interconn_0/controller_input_1"
         ]
       },
-      "enable_1_1": {
+      "enable_0_1": {
         "ports": [
-          "enable_1",
-          "draadloze_sensor_0/enable"
+          "enable",
+          "controller_interconn_0/enable"
+        ]
+      },
+      "freq_in_0_1": {
+        "ports": [
+          "inductieve_sensor_in",
+          "inductieve_sensor_0/freq_in"
+        ]
+      },
+      "inductieve_sensor_0_value_out": {
+        "ports": [
+          "inductieve_sensor_0/value_out",
+          "controller_interconn_0/controller_input_2"
         ]
       },
       "reset_rtl_1": {
@@ -229,19 +356,19 @@
       },
       "signal_connected_0_1": {
         "ports": [
-          "signal_connected_0",
+          "draadloos_signal_connected",
           "draadloze_sensor_0/signal_connected"
         ]
       },
       "signal_down_0_1": {
         "ports": [
-          "signal_down_0",
+          "draadloos_signal_down",
           "draadloze_sensor_0/signal_down"
         ]
       },
       "signal_up_0_1": {
         "ports": [
-          "signal_up_0",
+          "draadloos_signal_up",
           "draadloze_sensor_0/signal_up"
         ]
       },
