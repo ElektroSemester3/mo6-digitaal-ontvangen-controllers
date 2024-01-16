@@ -1,45 +1,54 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.11836",
-   "Default View_TopLeft":"432,-75",
+   "Default View_ScaleFactor":"0.943937",
+   "Default View_TopLeft":"-238,55",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.5.8 2022-09-21 7111 VDI=41 GEI=38 GUI=JA:10.0
 #  -string -flagsOSRD
-preplace port port-id_sys_clock -pg 1 -lvl 0 -x 0 -y 320 -defaultsOSRD
-preplace port port-id_reset_rtl -pg 1 -lvl 0 -x 0 -y 260 -defaultsOSRD
-preplace port port-id_draadloos_signal_up -pg 1 -lvl 0 -x 0 -y 430 -defaultsOSRD
-preplace port port-id_draadloos_signal_connected -pg 1 -lvl 0 -x 0 -y 400 -defaultsOSRD
-preplace port port-id_draadloos_signal_down -pg 1 -lvl 0 -x 0 -y 460 -defaultsOSRD
-preplace port port-id_inductieve_sensor_in -pg 1 -lvl 0 -x 0 -y 230 -defaultsOSRD
-preplace port port-id_enable -pg 1 -lvl 0 -x 0 -y 60 -defaultsOSRD
-preplace portBus choice_1 -pg 1 -lvl 0 -x 0 -y 90 -defaultsOSRD
-preplace portBus choice_2 -pg 1 -lvl 0 -x 0 -y 120 -defaultsOSRD
-preplace portBus controller_output_1 -pg 1 -lvl 5 -x 1170 -y 130 -defaultsOSRD
-preplace portBus controller_output_2 -pg 1 -lvl 5 -x 1170 -y 160 -defaultsOSRD
-preplace inst clk_wiz -pg 1 -lvl 1 -x 110 -y 310 -defaultsOSRD
-preplace inst clk_divider_0 -pg 1 -lvl 2 -x 310 -y 310 -defaultsOSRD
-preplace inst draadloze_sensor_0 -pg 1 -lvl 3 -x 590 -y 400 -defaultsOSRD
-preplace inst inductieve_sensor_0 -pg 1 -lvl 3 -x 590 -y 200 -defaultsOSRD
-preplace inst controller_interconn_0 -pg 1 -lvl 4 -x 950 -y 120 -defaultsOSRD
-preplace netloc clk_divider_0_clk_out 1 2 1 420 310n
-preplace netloc clk_wiz_clk_out1 1 1 2 210 170 N
-preplace netloc reset_rtl_1 1 0 3 20 380 210 380 410
-preplace netloc sys_clock_1 1 0 1 NJ 320
-preplace netloc draadloze_sensor_0_value_out 1 3 1 750 130n
-preplace netloc controller_interconn_0_controller_enable_1 1 2 3 430 10 NJ 10 1140
-preplace netloc signal_up_0_1 1 0 3 NJ 430 NJ 430 NJ
-preplace netloc signal_connected_0_1 1 0 3 NJ 400 NJ 400 440J
-preplace netloc signal_down_0_1 1 0 3 NJ 460 NJ 460 410J
-preplace netloc inductieve_sensor_0_value_out 1 3 1 760 150n
-preplace netloc controller_interconn_0_controller_enable_2 1 2 3 440 100 740J 230 1140
-preplace netloc freq_in_0_1 1 0 3 NJ 230 NJ 230 NJ
-preplace netloc choice_1_0_1 1 0 4 NJ 90 NJ 90 NJ 90 NJ
-preplace netloc choice_2_0_1 1 0 4 NJ 120 NJ 120 410J 110 NJ
-preplace netloc enable_0_1 1 0 4 NJ 60 NJ 60 NJ 60 740J
-preplace netloc controller_interconn_0_controller_output_1 1 4 1 1150J 130n
-preplace netloc controller_interconn_0_controller_output_2 1 4 1 NJ 160
-levelinfo -pg 1 0 110 310 590 950 1170
-pagesize -pg 1 -db -bbox -sgen -230 0 1390 510
+preplace port port-id_sys_clock -pg 1 -lvl 0 -x -10 -y 540 -defaultsOSRD
+preplace port port-id_reset_rtl -pg 1 -lvl 0 -x -10 -y 480 -defaultsOSRD
+preplace port port-id_draadloos_signal_up -pg 1 -lvl 0 -x -10 -y 150 -defaultsOSRD
+preplace port port-id_draadloos_signal_connected -pg 1 -lvl 0 -x -10 -y 120 -defaultsOSRD
+preplace port port-id_draadloos_signal_down -pg 1 -lvl 0 -x -10 -y 180 -defaultsOSRD
+preplace port port-id_inductieve_sensor_in -pg 1 -lvl 0 -x -10 -y 450 -defaultsOSRD
+preplace port port-id_enable -pg 1 -lvl 0 -x -10 -y 280 -defaultsOSRD
+preplace port port-id_ultrasoon_sensor -pg 1 -lvl 0 -x -10 -y 600 -defaultsOSRD
+preplace port port-id_ultrasoon_trigger -pg 1 -lvl 5 -x 1210 -y 620 -defaultsOSRD
+preplace port port-id_active -pg 1 -lvl 5 -x 1210 -y 390 -defaultsOSRD
+preplace portBus choice_1 -pg 1 -lvl 0 -x -10 -y 310 -defaultsOSRD
+preplace portBus choice_2 -pg 1 -lvl 0 -x -10 -y 340 -defaultsOSRD
+preplace portBus controller_output_1 -pg 1 -lvl 5 -x 1210 -y 360 -defaultsOSRD
+preplace portBus controller_output_2 -pg 1 -lvl 5 -x 1210 -y 420 -defaultsOSRD
+preplace inst clk_wiz -pg 1 -lvl 1 -x 110 -y 530 -defaultsOSRD
+preplace inst clk_divider_0 -pg 1 -lvl 2 -x 310 -y 530 -defaultsOSRD
+preplace inst draadloze_sensor_0 -pg 1 -lvl 3 -x 610 -y 120 -defaultsOSRD
+preplace inst inductieve_sensor_0 -pg 1 -lvl 3 -x 610 -y 420 -defaultsOSRD
+preplace inst ultrasoon_0 -pg 1 -lvl 3 -x 610 -y 610 -defaultsOSRD
+preplace inst controller_interconn_0 -pg 1 -lvl 4 -x 980 -y 340 -defaultsOSRD
+preplace netloc choice_1_0_1 1 0 4 NJ 310 NJ 310 NJ 310 NJ
+preplace netloc choice_2_0_1 1 0 4 20J 330 NJ 330 NJ 330 NJ
+preplace netloc clk_divider_0_clk_out 1 2 1 410 70n
+preplace netloc clk_wiz_clk_out1 1 1 2 210 600 440
+preplace netloc controller_interconn_0_controller_enable_1 1 2 3 460 230 760J 210 1190
+preplace netloc controller_interconn_0_controller_enable_2 1 2 3 450 240 780J 230 1170
+preplace netloc controller_interconn_0_controller_output_1 1 4 1 1170J 350n
+preplace netloc controller_interconn_0_controller_output_2 1 4 1 1170J 370n
+preplace netloc draadloze_sensor_0_value_out 1 3 1 790 120n
+preplace netloc enable_0_1 1 0 4 20J 290 NJ 290 NJ 290 NJ
+preplace netloc freq_in_0_1 1 0 3 NJ 450 NJ 450 NJ
+preplace netloc inductieve_sensor_0_value_out 1 3 1 760 370n
+preplace netloc reset_rtl_1 1 0 3 20 600 200 620 430
+preplace netloc signal_connected_0_1 1 0 3 NJ 120 NJ 120 420J
+preplace netloc signal_down_0_1 1 0 3 NJ 180 NJ 180 420J
+preplace netloc signal_up_0_1 1 0 3 NJ 150 NJ 150 NJ
+preplace netloc sys_clock_1 1 0 1 NJ 540
+preplace netloc sensor_0_1 1 0 3 10J 610 NJ 610 450J
+preplace netloc controller_interconn_0_controller_enable_3 1 2 3 460 250 770J 220 1180
+preplace netloc ultrasoon_0_value 1 3 1 790 390n
+preplace netloc ultrasoon_0_trigger 1 3 2 NJ 620 NJ
+preplace netloc controller_interconn_0_active 1 4 1 N 390
+levelinfo -pg 1 -10 110 310 610 980 1210
+pagesize -pg 1 -db -bbox -sgen -240 0 1410 700
 "
 }
 {

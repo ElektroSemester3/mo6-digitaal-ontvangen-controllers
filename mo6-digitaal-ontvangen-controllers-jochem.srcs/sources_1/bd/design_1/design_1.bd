@@ -1,19 +1,21 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0x78C08ECF6553683E",
+      "boundary_crc": "0x899479523BD25D38",
       "device": "xc7z020clg400-1",
       "gen_directory": "../../../../mo6-digitaal-ontvangen-controllers-jochem.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
       "synth_flow_mode": "Hierarchical",
-      "tool_version": "2023.1"
+      "tool_version": "2023.1",
+      "validated": "true"
     },
     "design_tree": {
       "clk_wiz": "",
       "clk_divider_0": "",
       "draadloze_sensor_0": "",
       "inductieve_sensor_0": "",
+      "ultrasoon_0": "",
       "controller_interconn_0": ""
     },
     "ports": {
@@ -21,8 +23,20 @@
         "type": "clk",
         "direction": "I",
         "parameters": {
+          "CLK_DOMAIN": {
+            "value": "design_1_sys_clock",
+            "value_src": "default"
+          },
           "FREQ_HZ": {
             "value": "125000000"
+          },
+          "FREQ_TOLERANCE_HZ": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
           },
           "PHASE": {
             "value": "0.0"
@@ -33,6 +47,10 @@
         "type": "rst",
         "direction": "I",
         "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
           "POLARITY": {
             "value": "ACTIVE_HIGH"
           }
@@ -72,6 +90,15 @@
         "direction": "O",
         "left": "8",
         "right": "0"
+      },
+      "ultrasoon_sensor": {
+        "direction": "I"
+      },
+      "ultrasoon_trigger": {
+        "direction": "O"
+      },
+      "active": {
+        "direction": "O"
       }
     },
     "components": {
@@ -109,7 +136,21 @@
         },
         "ports": {
           "clk_in": {
-            "direction": "I"
+            "direction": "I",
+            "parameters": {
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
           },
           "reset": {
             "type": "rst",
@@ -185,6 +226,18 @@
               "ASSOCIATED_RESET": {
                 "value": "reset",
                 "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
               }
             }
           },
@@ -207,6 +260,64 @@
             "direction": "O",
             "left": "8",
             "right": "0"
+          }
+        }
+      },
+      "ultrasoon_0": {
+        "vlnv": "xilinx.com:module_ref:ultrasoon:1.0",
+        "xci_name": "design_1_ultrasoon_0_0",
+        "xci_path": "ip\\design_1_ultrasoon_0_0\\design_1_ultrasoon_0_0.xci",
+        "inst_hier_path": "ultrasoon_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ultrasoon",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "reset",
+                "value_src": "constant"
+              },
+              "FREQ_HZ": {
+                "value": "100000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
+              },
+              "CLK_DOMAIN": {
+                "value": "/clk_wiz_clk_out1",
+                "value_src": "ip_prop"
+              }
+            }
+          },
+          "sensor": {
+            "direction": "I"
+          },
+          "enable": {
+            "direction": "I"
+          },
+          "reset": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "value": {
+            "direction": "O",
+            "left": "8",
+            "right": "0"
+          },
+          "trigger": {
+            "direction": "O"
           }
         }
       },
@@ -267,6 +378,9 @@
             "direction": "O",
             "left": "8",
             "right": "0"
+          },
+          "active": {
+            "direction": "O"
           }
         }
       }
@@ -294,7 +408,14 @@
         "ports": [
           "clk_wiz/clk_out1",
           "clk_divider_0/clk_in",
-          "inductieve_sensor_0/clk"
+          "inductieve_sensor_0/clk",
+          "ultrasoon_0/clk"
+        ]
+      },
+      "controller_interconn_0_active": {
+        "ports": [
+          "controller_interconn_0/active",
+          "active"
         ]
       },
       "controller_interconn_0_controller_enable_1": {
@@ -307,6 +428,12 @@
         "ports": [
           "controller_interconn_0/controller_enable_2",
           "inductieve_sensor_0/enable"
+        ]
+      },
+      "controller_interconn_0_controller_enable_3": {
+        "ports": [
+          "controller_interconn_0/controller_enable_3",
+          "ultrasoon_0/enable"
         ]
       },
       "controller_interconn_0_controller_output_1": {
@@ -351,7 +478,14 @@
           "clk_wiz/reset",
           "clk_divider_0/reset",
           "draadloze_sensor_0/reset",
-          "inductieve_sensor_0/reset"
+          "inductieve_sensor_0/reset",
+          "ultrasoon_0/reset"
+        ]
+      },
+      "sensor_0_1": {
+        "ports": [
+          "ultrasoon_sensor",
+          "ultrasoon_0/sensor"
         ]
       },
       "signal_connected_0_1": {
@@ -376,6 +510,18 @@
         "ports": [
           "sys_clock",
           "clk_wiz/clk_in1"
+        ]
+      },
+      "ultrasoon_0_trigger": {
+        "ports": [
+          "ultrasoon_0/trigger",
+          "ultrasoon_trigger"
+        ]
+      },
+      "ultrasoon_0_value": {
+        "ports": [
+          "ultrasoon_0/value",
+          "controller_interconn_0/controller_input_3"
         ]
       }
     }

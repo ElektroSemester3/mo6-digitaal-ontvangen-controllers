@@ -34,7 +34,8 @@ entity controller_interconnect is
         controller_enable_2 : out STD_LOGIC;
         controller_enable_3 : out STD_LOGIC;
         controller_output_1 : out STD_LOGIC_VECTOR (8 downto 0);
-        controller_output_2 : out STD_LOGIC_VECTOR (8 downto 0)
+        controller_output_2 : out STD_LOGIC_VECTOR (8 downto 0);
+        active : out STD_LOGIC
     );
 end controller_interconnect;
 
@@ -48,7 +49,7 @@ begin
 
     choice_combined <= choice_1 & choice_2;
 
-    state_decoder: process(enabled, choice_combined)
+    state_decoder: process(enable, choice_combined)
     begin
         if enable = '0' then
             current_state <= s0;
@@ -81,48 +82,56 @@ begin
                 controller_enable_3 <= '0';
                 controller_output_1 <= (others => '0');
                 controller_output_2 <= (others => '0');
+                active <= '0';
             when s1 =>
                 controller_enable_1 <= '1';
                 controller_enable_2 <= '1';
                 controller_enable_3 <= '0';
                 controller_output_1 <= controller_input_1;
                 controller_output_2 <= controller_input_2;
+                active <= '1';
             when s2 =>
                 controller_enable_1 <= '0';
                 controller_enable_2 <= '1';
                 controller_enable_3 <= '1';
                 controller_output_1 <= controller_input_2;
                 controller_output_2 <= controller_input_3;
+                active <= '1';
             when s3 =>
                 controller_enable_1 <= '1';
                 controller_enable_2 <= '1';
                 controller_enable_3 <= '0';
                 controller_output_1 <= controller_input_2;
                 controller_output_2 <= controller_input_1;
+                active <= '1';
             when s4 =>
                 controller_enable_1 <= '0';
                 controller_enable_2 <= '1';
                 controller_enable_3 <= '1';
                 controller_output_1 <= controller_input_2;
                 controller_output_2 <= controller_input_3;
+                active <= '1';
             when s5 =>
                 controller_enable_1 <= '1';
                 controller_enable_2 <= '0';
                 controller_enable_3 <= '1';
                 controller_output_1 <= controller_input_3;
                 controller_output_2 <= controller_input_1;
+                active <= '1';
             when s6 =>
                 controller_enable_1 <= '0';
                 controller_enable_2 <= '1';
                 controller_enable_3 <= '1';
                 controller_output_1 <= controller_input_3;
                 controller_output_2 <= controller_input_2;
+                active <= '1';
             when others =>
                 controller_enable_1 <= '0';
                 controller_enable_2 <= '0';
                 controller_enable_3 <= '0';
                 controller_output_1 <= (others => '0');
                 controller_output_2 <= (others => '0');
+                active <= '0';
         end case;
     end process;
 

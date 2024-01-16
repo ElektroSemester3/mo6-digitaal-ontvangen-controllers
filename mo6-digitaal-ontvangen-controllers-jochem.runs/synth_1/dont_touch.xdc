@@ -9,13 +9,19 @@ set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1 ||
 # IP: bd/design_1/ip/design_1_clk_wiz_0/design_1_clk_wiz_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_clk_wiz_0 || ORIG_REF_NAME==design_1_clk_wiz_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_inductieve_sensor_0_0/design_1_inductieve_sensor_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_inductieve_sensor_0_0 || ORIG_REF_NAME==design_1_inductieve_sensor_0_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_clk_divider_0_0/design_1_clk_divider_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_clk_divider_0_0 || ORIG_REF_NAME==design_1_clk_divider_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_draadloze_sensor_0_0/design_1_draadloze_sensor_0_0.xci
 set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_draadloze_sensor_0_0 || ORIG_REF_NAME==design_1_draadloze_sensor_0_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_clk_divider_0_0/design_1_clk_divider_0_0.xci
-set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_clk_divider_0_0 || ORIG_REF_NAME==design_1_clk_divider_0_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_inductieve_sensor_0_0/design_1_inductieve_sensor_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_inductieve_sensor_0_0 || ORIG_REF_NAME==design_1_inductieve_sensor_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_controller_interconn_0_0/design_1_controller_interconn_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_controller_interconn_0_0 || ORIG_REF_NAME==design_1_controller_interconn_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_ultrasoon_0_0/design_1_ultrasoon_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_ultrasoon_0_0 || ORIG_REF_NAME==design_1_ultrasoon_0_0} -quiet] -quiet
 
 # XDC: d:/Vivado/mo6-digitaal-ontvangen-controllers/mo6-digitaal-ontvangen-controllers-jochem.gen/sources_1/bd/design_1/design_1_ooc.xdc

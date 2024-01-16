@@ -46,7 +46,8 @@
         "controller_enable_2": [ { "direction": "out" } ],
         "controller_enable_3": [ { "direction": "out" } ],
         "controller_output_1": [ { "direction": "out", "size_left": "8", "size_right": "0" } ],
-        "controller_output_2": [ { "direction": "out", "size_left": "8", "size_right": "0" } ]
+        "controller_output_2": [ { "direction": "out", "size_left": "8", "size_right": "0" } ],
+        "active": [ { "direction": "out" } ]
       }
     }
   }
